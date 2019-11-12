@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+    display: grid;
+    grid-template-areas: "nav nav nav"
+                         "aside1 section aside2"
+                         "footer footer footer";
+    grid-template-columns: 20vw 60vw 20vw;
+    grid-template-rows: 20vh 60vh 20vh;
+    margin: 0;
+}
+
+footer{
+    grid-area: footer;
+}
+
+nav{
+    grid-area: nav;
+}
+
+.p1{
+    grid-area: aside1;
+}
+
+.p2{
+    grid-area: aside2;
+}
+
+section{
+    grid-area: section;
+}
