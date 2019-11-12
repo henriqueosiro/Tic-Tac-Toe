@@ -1,3 +1,18 @@
+.board{
+    border: 0.48vh solid white;
+    border-radius: 1.5vh;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    height: 60vh;
+    width: 60vh;
+}
+
+.board div{
+    border: 0.5vh solid white;
+    height: 19vh;
+    width: 19vh;
+}
+
 body {
     background-color: black;
     display: grid;
@@ -11,6 +26,17 @@ body {
 
 footer{
     grid-area: footer;
+}
+
+h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15vh;
+    height: 19vh;
+    line-height: 19vh;
+    margin: 0;
+    text-align: center;
+    width: 19vh;
 }
 
 nav{
@@ -30,19 +56,4 @@ section{
     display: flex;
     grid-area: section;
     justify-content: center;
-}
-
-.board{
-    border: 0.48vh solid white;
-    border-radius: 1.5vh;
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    height: 60vh;
-    width: 60vh;
-}
-
-.board div{
-    border: 0.5vh solid white;
-    height: 19vh;
-    width: 19vh;
 }
