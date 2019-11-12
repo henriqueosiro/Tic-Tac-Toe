@@ -4,8 +4,8 @@ body {
     grid-template-areas: "nav nav nav"
                          "aside1 section aside2"
                          "footer footer footer";
-    grid-template-columns: 20vw 60vw 20vw;
-    grid-template-rows: 20vh 60vh 20vh;
+    grid-template-columns: 19.5vw 61vw 19.5vw;
+    grid-template-rows: 19.5vh 61vh 19.5vh;
     margin: 0;
 }
 
@@ -26,5 +26,23 @@ nav{
 }
 
 section{
+    align-items: center;
+    display: flex;
     grid-area: section;
+    justify-content: center;
+}
+
+.board{
+    border: 0.48vh solid white;
+    border-radius: 1.5vh;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    height: 60vh;
+    width: 60vh;
+}
+
+.board div{
+    border: 0.5vh solid white;
+    height: 19vh;
+    width: 19vh;
 }
