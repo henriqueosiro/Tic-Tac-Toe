@@ -39,16 +39,28 @@ h1{
     width: 19vh;
 }
 
+h3{
+    color: white;
+    font-size: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 nav{
     grid-area: nav;
 }
 
 .p1{
+    align-items: center;
+    display: flex;
     grid-area: aside1;
+    justify-content: space-around;
 }
 
 .p2{
+    align-items: center;
+    display: flex;
     grid-area: aside2;
+    justify-content: space-around;
 }
 
 section{
