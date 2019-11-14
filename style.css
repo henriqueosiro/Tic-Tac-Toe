@@ -49,14 +49,14 @@ nav{
     grid-area: nav;
 }
 
-.p1{
+.player1{
     align-items: center;
     display: flex;
     grid-area: aside1;
     justify-content: space-around;
 }
 
-.p2{
+.player2{
     align-items: center;
     display: flex;
     grid-area: aside2;
