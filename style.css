@@ -16,9 +16,9 @@
 body {
     background-color: black;
     display: grid;
-    grid-template-areas: "nav nav nav"
-                         "aside1 section aside2"
-                         "footer footer footer";
+    grid-template-areas: "player1 nav player2"
+                         "player1 game player2"
+                         "player1 footer player2";
     grid-template-columns: 19.5vw 61vw 19.5vw;
     grid-template-rows: 19.5vh 61vh 19.5vh;
     margin: 0;
@@ -51,21 +51,25 @@ nav{
 
 .player1{
     align-items: center;
+    background-color: red;
     display: flex;
-    grid-area: aside1;
-    justify-content: space-around;
+    flex-direction: column; 
+    grid-area: player1;
+    justify-content: center;
 }
 
 .player2{
     align-items: center;
+    background-color: blue;
     display: flex;
-    grid-area: aside2;
-    justify-content: space-around;
+    flex-direction: column; 
+    grid-area: player2;
+    justify-content: center;
 }
 
 section{
     align-items: center;
     display: flex;
-    grid-area: section;
+    grid-area: game;
     justify-content: center;
 }
