@@ -4,6 +4,11 @@ let p1 = document.getElementById("p1");
 let p2 = document.getElementById("p2");
 let point1 = 0;
 let point2 = 0;
+for (let boxs of box) {
+    p1.innerText = point1;
+    p2.innerText = point2;
+    boxs.onclick = play;
+}
 
 function play(event) {
     if (event.target.innerHTML == "X" || event.target.innerHTML == "O") {
@@ -31,6 +36,8 @@ function check() {
         point1++;
         p1.innerText = point1;
         alert("O jogador X ganhou!");
+        clean();
+        click = 0;
     } else if ((box[0].innerText == "O" && box[0].innerText == box[1].innerText && box[1].innerText == box[2].innerText) ||
         (box[3].innerText == "O" && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) ||
         (box[6].innerText == "O" && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) ||
@@ -42,15 +49,18 @@ function check() {
         point2++;
         p2.innerText = point2;
         alert("O jogador O ganhou!");
+        clean();
+        click = 0;
     } else if (click == 9) {
         alert("O jogo terminou empatado!")
+        clean();
     } else {
         console.log("O jogo ainda não acabou!")
     }
 }
 
-for (let boxs of box) {
-    p1.innerText = point1;
-    p2.innerText = point2;
-    boxs.onclick = play;
+function clean() {
+    for (let i = 0; i < box.length + 1; i++) {
+        box[i].textContent = "";
+    }
 }
