@@ -37,7 +37,6 @@ function check() {
         p1.innerText = point1;
         alert("O jogador X ganhou!");
         clean();
-        click = 0;
     } else if ((box[0].innerText == "O" && box[0].innerText == box[1].innerText && box[1].innerText == box[2].innerText) ||
         (box[3].innerText == "O" && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) ||
         (box[6].innerText == "O" && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) ||
@@ -50,7 +49,6 @@ function check() {
         p2.innerText = point2;
         alert("O jogador O ganhou!");
         clean();
-        click = 0;
     } else if (click == 9) {
         alert("O jogo terminou empatado!")
         clean();
@@ -60,7 +58,8 @@ function check() {
 }
 
 function clean() {
-    for (let i = 0; i < box.length + 1; i++) {
+    for (let i = 0; i < box.length; i++) {
         box[i].textContent = "";
     }
+    click = 0;
 }
