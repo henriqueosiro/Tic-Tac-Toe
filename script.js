@@ -1,12 +1,10 @@
 let box = document.querySelectorAll("h1");
 let click = 0;
-let p1 = document.getElementById("p1");
-let p2 = document.getElementById("p2");
 let point1 = 0;
 let point2 = 0;
 for (let boxs of box) {
-    p1.innerText = point1;
-    p2.innerText = point2;
+    document.getElementById("p1").innerText = point1;
+    document.getElementById("p2").innerText = point2;
     boxs.onclick = play;
 }
 
@@ -27,12 +25,12 @@ function play(event) {
 function check() {
     if (match("X") == true) {
         point1++;
-        p1.innerText = point1;
+        document.getElementById("p1").innerText = point1;
         setTimeout(function(){ alert("O jogador venceu") }, 100);
         setTimeout(clear, 100);
     } else if (match("O") == true) {
         point2++;
-        p2.innerText = point2;
+        document.getElementById("p2").innerText = point2;
         setTimeout(function(){ alert("O jogador venceu") }, 100);
         setTimeout(clear, 100);
     } else if (click == 9) {
