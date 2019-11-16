@@ -48,7 +48,7 @@ function clear() {
     click = 0;
 }
 
-var match = function (letter){
+function match (letter){
     if ((box[0].innerText == letter && box[0].innerText == box[1].innerText && box[1].innerText == box[2].innerText) ||
     (box[3].innerText == letter && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) ||
     (box[6].innerText == letter && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) ||
