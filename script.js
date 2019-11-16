@@ -35,8 +35,8 @@ function check() {
         (box[2].innerText == "X" && box[2].innerText == box[4].innerText && box[4].innerText == box[6].innerText)) {
         point1++;
         p1.innerText = point1;
-        alert("O jogador X ganhou!");
-        clear();
+        setTimeout(function(){ alert("O jogador venceu") }, 100);
+        setTimeout(clear, 100);
     } else if ((box[0].innerText == "O" && box[0].innerText == box[1].innerText && box[1].innerText == box[2].innerText) ||
         (box[3].innerText == "O" && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) ||
         (box[6].innerText == "O" && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) ||
@@ -47,13 +47,11 @@ function check() {
         (box[2].innerText == "O" && box[2].innerText == box[4].innerText && box[4].innerText == box[6].innerText)) {
         point2++;
         p2.innerText = point2;
-        alert("O jogador O ganhou!");
-        clear();
+        setTimeout(function(){ alert("O jogador venceu") }, 100);
+        setTimeout(clear, 100);
     } else if (click == 9) {
-        alert("O jogo terminou empatado!")
-        clear();
-    } else {
-        console.log("O jogo ainda não acabou!")
+        setTimeout(function(){ alert("O jogo terminou empatado!") }, 1000);
+        setTimeout(clear, 1000);
     }
 }
 
