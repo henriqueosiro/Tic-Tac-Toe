@@ -30,12 +30,12 @@ function check() {
     if (match("X") == true) {
         point1++;
         document.getElementById("point1").innerText = point1;
-        setTimeout(function () { alert("O jogador venceu") }, 100);
+        setTimeout(function () { alert("O jogador " + player1 + " venceu!") }, 100);
         setTimeout(clear, 100);
     } else if (match("O") == true) {
         point2++;
         document.getElementById("point2").innerText = point2;
-        setTimeout(function () { alert("O jogador venceu") }, 100);
+        setTimeout(function () { alert("O jogador " + player2 + " venceu!") }, 100);
         setTimeout(clear, 100);
     } else if (click == 9) {
         setTimeout(function () { alert("O jogo terminou empatado!") }, 1000);
