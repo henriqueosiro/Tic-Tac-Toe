@@ -25,26 +25,12 @@ function play(event) {
 }
 
 function check() {
-    if ((box[0].innerText == "X" && box[0].innerText == box[1].innerText && box[1].innerText == box[2].innerText) ||
-        (box[3].innerText == "X" && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) ||
-        (box[6].innerText == "X" && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) ||
-        (box[0].innerText == "X" && box[0].innerText == box[3].innerText && box[3].innerText == box[6].innerText) ||
-        (box[1].innerText == "X" && box[1].innerText == box[4].innerText && box[4].innerText == box[7].innerText) ||
-        (box[2].innerText == "X" && box[2].innerText == box[5].innerText && box[5].innerText == box[8].innerText) ||
-        (box[0].innerText == "X" && box[0].innerText == box[4].innerText && box[4].innerText == box[8].innerText) ||
-        (box[2].innerText == "X" && box[2].innerText == box[4].innerText && box[4].innerText == box[6].innerText)) {
+    if (match("X") == true) {
         point1++;
         p1.innerText = point1;
         setTimeout(function(){ alert("O jogador venceu") }, 100);
         setTimeout(clear, 100);
-    } else if ((box[0].innerText == "O" && box[0].innerText == box[1].innerText && box[1].innerText == box[2].innerText) ||
-        (box[3].innerText == "O" && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) ||
-        (box[6].innerText == "O" && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) ||
-        (box[0].innerText == "O" && box[0].innerText == box[3].innerText && box[3].innerText == box[6].innerText) ||
-        (box[1].innerText == "O" && box[1].innerText == box[4].innerText && box[4].innerText == box[7].innerText) ||
-        (box[2].innerText == "O" && box[2].innerText == box[5].innerText && box[5].innerText == box[8].innerText) ||
-        (box[0].innerText == "O" && box[0].innerText == box[4].innerText && box[4].innerText == box[8].innerText) ||
-        (box[2].innerText == "O" && box[2].innerText == box[4].innerText && box[4].innerText == box[6].innerText)) {
+    } else if (match("O") == true) {
         point2++;
         p2.innerText = point2;
         setTimeout(function(){ alert("O jogador venceu") }, 100);
@@ -60,4 +46,19 @@ function clear() {
         box[i].textContent = "";
     }
     click = 0;
+}
+
+var match = function (letter){
+    if ((box[0].innerText == letter && box[0].innerText == box[1].innerText && box[1].innerText == box[2].innerText) ||
+    (box[3].innerText == letter && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) ||
+    (box[6].innerText == letter && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) ||
+    (box[0].innerText == letter && box[0].innerText == box[3].innerText && box[3].innerText == box[6].innerText) ||
+    (box[1].innerText == letter && box[1].innerText == box[4].innerText && box[4].innerText == box[7].innerText) ||
+    (box[2].innerText == letter && box[2].innerText == box[5].innerText && box[5].innerText == box[8].innerText) ||
+    (box[0].innerText == letter && box[0].innerText == box[4].innerText && box[4].innerText == box[8].innerText) ||
+    (box[2].innerText == letter && box[2].innerText == box[4].innerText && box[4].innerText == box[6].innerText)){
+        return true;
+    } else {
+        return false;
+    }
 }
