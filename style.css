@@ -1,3 +1,17 @@
+a{
+    border: 0.5vh solid white;
+    border-radius: 1.5vh;
+    color: white;
+    font-size: 3vh;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 5vh;
+    line-height: 5.5vh;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    width: 25vh;
+}
+
 .board{
     border: 0.48vh solid white;
     border-radius: 1.5vh;
@@ -25,7 +39,18 @@ body {
 }
 
 footer{
+    align-items: center;
+    display: flex;
     grid-area: footer;
+    justify-content: space-around;
+}
+
+footer div{
+    align-items: center;
+    display: flex;
+    height: 19.5vh;
+    justify-content: space-around;
+    width: 60vh;
 }
 
 h1{
@@ -33,7 +58,7 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15vh;
     height: 19vh;
-    line-height: 19vh;
+    line-height: 19.5vh;
     margin: 0;
     text-align: center;
     width: 19vh;
