@@ -42,13 +42,13 @@ function check() {
     if (match("X", "red") == true) {
         point1++;
         document.getElementById("point1").innerText = point1;
-        setTimeout(function () { alert("O(A) jogador(a) " + player1 + " venceu!") }, 100);
-        setTimeout(clear, 100);
+        setTimeout(function () { alert("O(A) jogador(a) " + player1 + " venceu!") }, 1000);
+        setTimeout(clear, 1000);
     } else if (match("O", "blue") == true) {
         point2++;
         document.getElementById("point2").innerText = point2;
-        setTimeout(function () { alert("O(A) jogador(a) " + player2 + " venceu!") }, 100);
-        setTimeout(clear, 100);
+        setTimeout(function () { alert("O(A) jogador(a) " + player2 + " venceu!") }, 1000);
+        setTimeout(clear, 1000);
     } else if (click == 9) {
         setTimeout(function () { alert("O jogo terminou empatado!") }, 1000);
         setTimeout(clear, 1000);
@@ -68,41 +68,65 @@ function match(letter, color) {
         box[0].style.backgroundColor = color;
         box[1].style.backgroundColor = color;
         box[2].style.backgroundColor = color;
+        box[0].style.transition = "1s";
+        box[1].style.transition = "1s";
+        box[2].style.transition = "1s";
         return true;
     } else if (box[3].innerText == letter && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) {
         box[3].style.backgroundColor = color;
         box[4].style.backgroundColor = color;
         box[5].style.backgroundColor = color;
+        box[3].style.transition = "1s";
+        box[4].style.transition = "1s";
+        box[5].style.transition = "1s";
         return true;
     } else if (box[6].innerText == letter && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) {
         box[6].style.backgroundColor = color;
         box[7].style.backgroundColor = color;
         box[8].style.backgroundColor = color;
+        box[6].style.transition = "1s";
+        box[7].style.transition = "1s";
+        box[8].style.transition = "1s";
         return true;
     } else if (box[0].innerText == letter && box[0].innerText == box[3].innerText && box[3].innerText == box[6].innerText) {
         box[0].style.backgroundColor = color;
         box[3].style.backgroundColor = color;
         box[6].style.backgroundColor = color;
+        box[0].style.transition = "1s";
+        box[3].style.transition = "1s";
+        box[6].style.transition = "1s";
         return true;
     } else if (box[1].innerText == letter && box[1].innerText == box[4].innerText && box[4].innerText == box[7].innerText) {
         box[1].style.backgroundColor = color;
         box[4].style.backgroundColor = color;
         box[7].style.backgroundColor = color;
+        box[1].style.transition = "1s";
+        box[4].style.transition = "1s";
+        box[7].style.transition = "1s";
         return true;
     } else if (box[2].innerText == letter && box[2].innerText == box[5].innerText && box[5].innerText == box[8].innerText) {
         box[2].style.backgroundColor = color;
         box[5].style.backgroundColor = color;
         box[8].style.backgroundColor = color;
+        box[2].style.transition = "1s";
+        box[5].style.transition = "1s";
+        box[8].style.transition = "1s";
         return true;
     } else if (box[0].innerText == letter && box[0].innerText == box[4].innerText && box[4].innerText == box[8].innerText) {
         box[0].style.backgroundColor = color;
         box[4].style.backgroundColor = color;
         box[8].style.backgroundColor = color;
+        box[0].style.transition = "1s";
+        box[4].style.transition = "1s";
+        box[8].style.transition = "1s";
         return true;
     } else if (box[2].innerText == letter && box[2].innerText == box[4].innerText && box[4].innerText == box[6].innerText) {
         box[2].style.backgroundColor = color;
         box[4].style.backgroundColor = color;
         box[6].style.backgroundColor = color;
+        box[2].style.transition = "1s";
+        box[4].style.transition = "1s";
+        box[6].style.transition = "1s";
         return true;
     } else {
         return false;

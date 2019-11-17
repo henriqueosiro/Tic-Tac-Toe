@@ -6,10 +6,18 @@ a{
     font-family: Arial, Helvetica, sans-serif;
     height: 5vh;
     line-height: 5.5vh;
+    letter-spacing: 0.5vh;
     text-decoration: none;
     text-align: center;
     margin: 0;
+    transition: 1s;
     width: 25vh;
+}
+
+a:hover{
+    border: 0.5vh solid white;
+    background-color: white;
+    color: black;
 }
 
 .board{
@@ -18,12 +26,14 @@ a{
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     height: 60vh;
+    transition: 1s;
     width: 60vh;
 }
 
 .board div{
     border: 0.5vh solid white;
     height: 19vh;
+    transition: 1s;
     width: 19vh;
 }
 
@@ -61,6 +71,7 @@ h1{
     line-height: 19.5vh;
     margin: 0;
     text-align: center;
+    transition: 1s;
     width: 19vh;
 }
 
@@ -68,12 +79,14 @@ h2{
     color: white;
     font-size: 7.5vh;
     font-family: Arial, Helvetica, sans-serif;
+    transition: 1s;
 }
 
 h3{
     color: white;
     font-size: 5vh;
     font-family: Arial, Helvetica, sans-serif;
+    transition: 1s;
 }
 
 nav{
@@ -85,20 +98,29 @@ nav{
 
 .player1{
     align-items: center;
-    background-color: red;
+    background-color: black;
     display: flex;
     flex-direction: column; 
     grid-area: player1;
     justify-content: center;
+    transition: 1s;
+}
+.player1:hover{
+    background-color: red;
 }
 
 .player2{
     align-items: center;
-    background-color: blue;
+    background-color: black;
     display: flex;
     flex-direction: column; 
     grid-area: player2;
     justify-content: center;
+    transition: 1s;
+}
+
+.player2:hover{
+    background-color: blue;
 }
 
 section{
