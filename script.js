@@ -24,20 +24,6 @@ for (let boxs of box) {
     boxs.onmouseleave = off;
 }
 
-function play(event) {
-    if (event.target.innerHTML == "X" || event.target.innerHTML == "O") {
-        alert("ERROR 404");
-    } else {
-        if (click % 2 == 0) {
-            event.target.textContent = "X";
-        } else {
-            event.target.textContent = "O";
-        }
-        click++;
-        check();
-    }
-}
-
 function check() {
     if (match("X", "red") == true) {
         point1++;
@@ -61,6 +47,24 @@ function clear() {
         box[i].style.backgroundColor = "";
     }
     click = 0;
+}
+
+function count() {
+    s++;
+    if (s == 60) {
+        m++;
+        s = 0;
+    }
+    if (s < 10) {
+        document.getElementById("sec").innerText = "0" + s;
+    } else {
+        document.getElementById("sec").innerText = s;
+    }
+    if (m < 10) {
+        document.getElementById("min").innerText = "0" + m;
+    } else {
+        document.getElementById("min").innerText = m;
+    }
 }
 
 function match(letter, color) {
@@ -133,21 +137,11 @@ function match(letter, color) {
     }
 }
 
-function count() {
-    s++;
-    if (s == 60) {
-        m++;
-        s = 0;
-    }
-    if (s < 10) {
-        document.getElementById("sec").innerText = "0" + s;
-    } else {
-        document.getElementById("sec").innerText = s;
-    }
-    if (m < 10) {
-        document.getElementById("min").innerText = "0" + m;
-    } else {
-        document.getElementById("min").innerText = m;
+function off(event) {
+    if (event.target.innerHTML == "X") {
+        event.target.style.color = "";
+    } else if (event.target.innerHTML == "O") {
+        event.target.style.color = "";
     }
 }
 
@@ -159,10 +153,16 @@ function on(event) {
     }
 }
 
-function off(event) {
-    if (event.target.innerHTML == "X") {
-        event.target.style.color = "";
-    } else if (event.target.innerHTML == "O") {
-        event.target.style.color = "";
+function play(event) {
+    if (event.target.innerHTML == "X" || event.target.innerHTML == "O") {
+        alert("ERROR 404");
+    } else {
+        if (click % 2 == 0) {
+            event.target.textContent = "X";
+        } else {
+            event.target.textContent = "O";
+        }
+        click++;
+        check();
     }
 }

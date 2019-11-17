@@ -2,13 +2,13 @@ a{
     border: 0.5vh solid white;
     border-radius: 1.5vh;
     color: white;
-    font-size: 3vh;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vh;
     height: 5vh;
-    line-height: 5.5vh;
     letter-spacing: 0.5vh;
-    text-decoration: none;
+    line-height: 5.5vh;
     text-align: center;
+    text-decoration: none;
     margin: 0;
     transition: 1s;
     width: 25vh;
@@ -77,15 +77,15 @@ h1{
 
 h2{
     color: white;
-    font-size: 7.5vh;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5vh;
     transition: 1s;
 }
 
 h3{
     color: white;
-    font-size: 5vh;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vh;
     transition: 1s;
 }
 
