@@ -19,6 +19,8 @@ for (let boxs of box) {
     document.getElementById("point1").innerText = point1;
     document.getElementById("point2").innerText = point2;
     boxs.onclick = play;
+    boxs.onmouseenter = on;
+    boxs.onmouseleave = off;
 }
 
 function play(event) {
@@ -54,7 +56,7 @@ function check() {
 
 function clear() {
     for (let i = 0; i < box.length; i++) {
-        box[i].textContent = "";
+        box[i].innerText = "";
     }
     click = 0;
 }
@@ -74,20 +76,36 @@ function match(letter) {
     }
 }
 
-function count(){
+function count() {
     s++;
-    if (s == 60){
+    if (s == 60) {
         m++;
         s = 0;
     }
-    if (s < 10){
+    if (s < 10) {
         document.getElementById("sec").innerText = "0" + s;
     } else {
         document.getElementById("sec").innerText = s;
     }
-    if (m < 10){
+    if (m < 10) {
         document.getElementById("min").innerText = "0" + m;
     } else {
         document.getElementById("min").innerText = m;
+    }
+}
+
+function on(event) {
+    if (event.target.innerHTML == "X") {
+        event.target.style.color = "red";
+    } else if (event.target.innerHTML == "O") {
+        event.target.style.color = "blue";
+    }
+}
+
+function off(event) {
+    if (event.target.innerHTML == "X") {
+        event.target.style.color = "";
+    } else if (event.target.innerHTML == "O") {
+        event.target.style.color = "";
     }
 }
