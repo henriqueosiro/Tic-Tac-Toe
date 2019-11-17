@@ -1,15 +1,18 @@
 let box = document.querySelectorAll("h1");
 let click = 0;
+let m = 0;
 let player1 = "";
 let player2 = "";
+let point1 = 0;
+let point2 = 0;
+let s = 0;
 do {
     player1 = prompt("Digite o nome do(a) primeiro(a) jogador(a):");
 } while (player1.length == 0);
 do {
     player2 = prompt("Digite o nome do(a) segundo(a) jogador(a):");
 } while (player2.length == 0 || player2 == player1);
-let point1 = 0;
-let point2 = 0;
+setInterval(count, 1000);
 for (let boxs of box) {
     document.getElementById("player1").innerText = player1;
     document.getElementById("player2").innerText = player2;
@@ -68,5 +71,23 @@ function match(letter) {
         return true;
     } else {
         return false;
+    }
+}
+
+function count(){
+    s++;
+    if (s == 60){
+        m++;
+        s = 0;
+    }
+    if (s < 10){
+        document.getElementById("sec").innerText = "0" + s;
+    } else {
+        document.getElementById("sec").innerText = s;
+    }
+    if (m < 10){
+        document.getElementById("min").innerText = "0" + m;
+    } else {
+        document.getElementById("min").innerText = m;
     }
 }
