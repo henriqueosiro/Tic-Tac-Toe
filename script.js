@@ -1,5 +1,6 @@
 let box = document.querySelectorAll("h1");
 let click = 0;
+let color = "";
 let m = 0;
 let player1 = "";
 let player2 = "";
@@ -30,7 +31,7 @@ function play(event) {
         if (click % 2 == 0) {
             event.target.textContent = "X";
         } else {
-            event.target.textContent = "O"
+            event.target.textContent = "O";
         }
         click++;
         check();
@@ -38,12 +39,12 @@ function play(event) {
 }
 
 function check() {
-    if (match("X") == true) {
+    if (match("X", "red") == true) {
         point1++;
         document.getElementById("point1").innerText = point1;
         setTimeout(function () { alert("O(A) jogador(a) " + player1 + " venceu!") }, 100);
         setTimeout(clear, 100);
-    } else if (match("O") == true) {
+    } else if (match("O", "blue") == true) {
         point2++;
         document.getElementById("point2").innerText = point2;
         setTimeout(function () { alert("O(A) jogador(a) " + player2 + " venceu!") }, 100);
@@ -57,19 +58,51 @@ function check() {
 function clear() {
     for (let i = 0; i < box.length; i++) {
         box[i].innerText = "";
+        box[i].style.backgroundColor = "";
     }
     click = 0;
 }
 
-function match(letter) {
-    if ((box[0].innerText == letter && box[0].innerText == box[1].innerText && box[1].innerText == box[2].innerText) ||
-        (box[3].innerText == letter && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) ||
-        (box[6].innerText == letter && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) ||
-        (box[0].innerText == letter && box[0].innerText == box[3].innerText && box[3].innerText == box[6].innerText) ||
-        (box[1].innerText == letter && box[1].innerText == box[4].innerText && box[4].innerText == box[7].innerText) ||
-        (box[2].innerText == letter && box[2].innerText == box[5].innerText && box[5].innerText == box[8].innerText) ||
-        (box[0].innerText == letter && box[0].innerText == box[4].innerText && box[4].innerText == box[8].innerText) ||
-        (box[2].innerText == letter && box[2].innerText == box[4].innerText && box[4].innerText == box[6].innerText)) {
+function match(letter, color) {
+    if (box[0].innerText == letter && box[0].innerText == box[1].innerText && box[1].innerText == box[2].innerText) {
+        box[0].style.backgroundColor = color;
+        box[1].style.backgroundColor = color;
+        box[2].style.backgroundColor = color;
+        return true;
+    } else if (box[3].innerText == letter && box[3].innerText == box[4].innerText && box[4].innerText == box[5].innerText) {
+        box[3].style.backgroundColor = color;
+        box[4].style.backgroundColor = color;
+        box[5].style.backgroundColor = color;
+        return true;
+    } else if (box[6].innerText == letter && box[6].innerText == box[7].innerText && box[7].innerText == box[8].innerText) {
+        box[6].style.backgroundColor = color;
+        box[7].style.backgroundColor = color;
+        box[8].style.backgroundColor = color;
+        return true;
+    } else if (box[0].innerText == letter && box[0].innerText == box[3].innerText && box[3].innerText == box[6].innerText) {
+        box[0].style.backgroundColor = color;
+        box[3].style.backgroundColor = color;
+        box[6].style.backgroundColor = color;
+        return true;
+    } else if (box[1].innerText == letter && box[1].innerText == box[4].innerText && box[4].innerText == box[7].innerText) {
+        box[1].style.backgroundColor = color;
+        box[4].style.backgroundColor = color;
+        box[7].style.backgroundColor = color;
+        return true;
+    } else if (box[2].innerText == letter && box[2].innerText == box[5].innerText && box[5].innerText == box[8].innerText) {
+        box[2].style.backgroundColor = color;
+        box[5].style.backgroundColor = color;
+        box[8].style.backgroundColor = color;
+        return true;
+    } else if (box[0].innerText == letter && box[0].innerText == box[4].innerText && box[4].innerText == box[8].innerText) {
+        box[0].style.backgroundColor = color;
+        box[4].style.backgroundColor = color;
+        box[8].style.backgroundColor = color;
+        return true;
+    } else if (box[2].innerText == letter && box[2].innerText == box[4].innerText && box[4].innerText == box[6].innerText) {
+        box[2].style.backgroundColor = color;
+        box[4].style.backgroundColor = color;
+        box[6].style.backgroundColor = color;
         return true;
     } else {
         return false;
