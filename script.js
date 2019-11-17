@@ -1,7 +1,13 @@
 let box = document.querySelectorAll("h1");
 let click = 0;
-let player1 = prompt("Digite o nome do primeiro jogador:");
-let player2 = prompt("Digite o nome do segundo jogador:");
+let player1 = "";
+let player2 = "";
+do {
+    player1 = prompt("Digite o nome do(a) primeiro(a) jogador(a):");
+} while (player1.length == 0);
+do {
+    player2 = prompt("Digite o nome do(a) segundo(a) jogador(a):");
+} while (player2.length == 0 || player2 == player1);
 let point1 = 0;
 let point2 = 0;
 for (let boxs of box) {
@@ -30,12 +36,12 @@ function check() {
     if (match("X") == true) {
         point1++;
         document.getElementById("point1").innerText = point1;
-        setTimeout(function () { alert("O jogador " + player1 + " venceu!") }, 100);
+        setTimeout(function () { alert("O(A) jogador(a) " + player1 + " venceu!") }, 100);
         setTimeout(clear, 100);
     } else if (match("O") == true) {
         point2++;
         document.getElementById("point2").innerText = point2;
-        setTimeout(function () { alert("O jogador " + player2 + " venceu!") }, 100);
+        setTimeout(function () { alert("O(A) jogador(a) " + player2 + " venceu!") }, 100);
         setTimeout(clear, 100);
     } else if (click == 9) {
         setTimeout(function () { alert("O jogo terminou empatado!") }, 1000);
