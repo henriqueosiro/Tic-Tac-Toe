@@ -13,7 +13,7 @@ do {
 do {
     player2 = prompt("Digite o nome do(a) segundo(a) jogador(a):");
 } while (player2.length == 0 || player2 == player1);
-setInterval(count, 500);
+setInterval(count, 1000);
 for (let boxs of box) {
     document.getElementById("player1").innerText = player1;
     document.getElementById("player2").innerText = player2;
