@@ -39,6 +39,12 @@ h1{
     width: 19vh;
 }
 
+h2{
+    color: white;
+    font-size: 7.5vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h3{
     color: white;
     font-size: 5vh;
@@ -46,7 +52,10 @@ h3{
 }
 
 nav{
+    align-items: center;
+    display: flex;
     grid-area: nav;
+    justify-content: center;
 }
 
 .player1{
